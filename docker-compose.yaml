@@ -4,7 +4,7 @@ services:
     network_mode: ${NETWORK_MODE:-bridge}
     env_file: environment.d/homepage.env
     environment:
-      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS}
+      HOMEPAGE_ALLOWED_HOSTS: ${HOMEPAGE_ALLOWED_HOSTS:-localhost:${HOMEPAGE_PORT:-3000}}
     ports:
       - ${HOMEPAGE_PORT:-3000}:3000
     volumes:
